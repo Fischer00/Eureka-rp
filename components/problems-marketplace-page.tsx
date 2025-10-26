@@ -36,7 +36,7 @@ const mockProblems = [
   deadline: "15 de Março, 2025",
   description: "Buscamos engenheiro(a) com experiência em C++ e sistemas embarcados para pesquisa e desenvolvimento de solução de aceleração de hardware para decodificação de vídeo.",
   status: "Aberto"
-}
+},
   
 
   {
