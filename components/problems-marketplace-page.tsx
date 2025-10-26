@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Search, ChevronDown, ChevronUp, Building2, Calendar, DollarSign, Users } from "lucide-react"
+import { Search, ChevronDown, ChevronUp, Building2, Calendar, DollarSign, Users, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -13,21 +13,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 const mockProblems = [
   {
     id: 1,
-    title: "Controle por Spray para Vermes do Gado",
-    company: "AgroBrasil Pecuária",
-    companyLogo: "/agro-company-logo.jpg",
-    category: ["Tecnologia Novel", "Melhoria de Processo"],
-    partnershipModel: ["Pesquisa Patrocinada", "Co-desenvolvimento"],
-    budget: "R$ 150.000 - R$ 300.000",
-    deadline: "15 de Março, 2025",
-    description: "Buscamos solução inovadora para controle de parasitas em bovinos através de aplicação por spray.",
-    status: "Aberto",
-  },
-  {
-    id: 2,
     title: "Otimização de Processos de Fermentação Industrial",
-    company: "BioTech Solutions",
-    companyLogo: "/biotech-company-logo.jpg",
+    company: "anonimo",
+    companyLogo: "/placeholder.svg",
+
     category: ["Melhoria de Processo", "Análise e Testes"],
     partnershipModel: ["Pesquisa Patrocinada", "Consultoria"],
     budget: "R$ 200.000 - R$ 400.000",
@@ -35,6 +24,21 @@ const mockProblems = [
     description: "Necessitamos de expertise para otimizar nossos processos de fermentação e aumentar a eficiência.",
     status: "Aberto",
   },
+  {
+    
+  id: 2,
+  title: "P&D: Aceleração de Hardware para Decodificação de Vídeo",
+  company: "anonimo.",
+  companyLogo: "/placeholder.svg",
+  category: ["Pesquisa & Desenvolvimento", "Sistemas Embarcados"],
+  partnershipModel: ["Co-desenvolvimento", "Pesquisa Patrocinada"],
+  budget: "R$ 150.000 - R$ 300.000",
+  deadline: "15 de Março, 2025",
+  description: "Buscamos engenheiro(a) com experiência em C++ e sistemas embarcados para pesquisa e desenvolvimento de solução de aceleração de hardware para decodificação de vídeo.",
+  status: "Aberto"
+}
+  
+
   {
     id: 3,
     title: "Desenvolvimento de Embalagem Biodegradável",
@@ -333,8 +337,14 @@ export function ProblemsMarketplacePage() {
                       </div>
                     </CardContent>
 
-                    <CardFooter>
-                      <Button asChild className="w-full">
+                    <CardFooter className="flex gap-2">
+                      <Button asChild variant="outline" className="flex-1 bg-transparent">
+                        <Link href={`/chat/${problem.id}`}>
+                          <MessageCircle className="h-4 w-4 mr-2" />
+                          Chat
+                        </Link>
+                      </Button>
+                      <Button asChild className="flex-1">
                         <Link href={`/problems/${problem.id}`}>Ver Detalhes</Link>
                       </Button>
                     </CardFooter>

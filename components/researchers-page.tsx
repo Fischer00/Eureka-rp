@@ -17,8 +17,10 @@ interface Researcher {
   location: string
   expertise: string[]
   achievements: string
+  bio: string
   image: string
   email: string
+  lattes?: string
   linkedin?: string
   solutionsCount: number
   successRate: number
@@ -27,43 +29,46 @@ interface Researcher {
 const mockResearchers: Researcher[] = [
   {
     id: "1",
-    name: "Dra. Ana Silva",
-    title: "Pesquisadora Sênior em Biotecnologia",
-    institution: "Universidade de São Paulo",
-    location: "São Paulo, Brasil",
-    expertise: ["Biotecnologia", "Genética", "Microbiologia"],
-    achievements: "15+ anos de experiência, 50+ publicações",
-    image: "/professional-woman-scientist.png",
-    email: "ana.silva@usp.br",
-    linkedin: "anasilva",
+    name: "Daiani Canabarro Leite",
+    title: "Professora Assistente em Físico-Química",
+    institution: "Universidade Federal de Santa Maria (UFSM)",
+    location: "Santa Maria, Brasil",
+    expertise: ["Físico-Química", "Biopolímeros", "Hidrogéis", "Biomateriais"],
+    achievements: "15 anos de experiência, Doutorado pela UFRGS",
+    bio: "Bacharel em Química pela Universidade La Salle (Unilasalle), mestre e doutor em Química pela Universidade Federal do Rio Grande do Sul (UFRGS), com período sanduíche na Universität Bielefeld (Alemanha). Realizou pós-doutorado na Universidade Federal do Paraná (UFPR). Atualmente é Professor Assistente na Universidade Federal de Santa Maria (UFSM), lecionando disciplinas de físico-química, coordenando o Laboratório de Superfícies e Macromoléculas (SMLab) e docente do Programa de Pós-Graduação em Química. Sua pesquisa envolve modificação e caracterização de biopolímeros e hidrogéis estímulo-responsivos aplicados às áreas biomédica, veterinária e ambiental, em colaboração com empresas em projetos de desenvolvimento de biomateriais inovadores.",
+    image: "/DaianiCanabarroLeite.jpeg",
+    email: "daiani.leite@ufsm.br",
+    lattes: "http://lattes.cnpq.br/5215843889810187",
     solutionsCount: 12,
     successRate: 85,
   },
   {
     id: "2",
-    name: "Dr. Carlos Mendes",
-    title: "Professor de Engenharia Química",
-    institution: "UNICAMP",
-    location: "Campinas, Brasil",
-    expertise: ["Química Industrial", "Processos", "Sustentabilidade"],
-    achievements: "20+ anos de experiência, Prêmio Nacional de Inovação 2023",
-    image: "/professional-scientist.png",
-    email: "carlos.mendes@unicamp.br",
-    linkedin: "carlosmendes",
+    name: "Alexandre Meneghello Fuentefria",
+    title: "Professor Associado IV em Microbiologia",
+    institution: "Universidade Federal do Rio Grande do Sul (UFRGS)",
+    location: "Porto Alegre, Brasil",
+    expertise: ["Microbiologia", "Farmacologia", "Biotecnologia", "Propriedade Intelectual"],
+    achievements: "25 anos de experiência, 190+ publicações, Detentor de patentes",
+    bio: "Professor Associado IV na UFRGS e líder em pesquisa e inovação nas áreas de Ciências Farmacêuticas, Farmacologia e Microbiologia. Farmacêutico com mestrado em Microbiologia e doutorado em Biologia Celular e Molecular, desenvolve novos antimicrobianos, imunomoduladores, fungicidas e produtos biotecnológicos em parceria com a indústria. Autor de mais de 190 artigos, detentor de patentes e coordenador do Curso de Especialização em Propriedade Intelectual e Inovação da UFRGS, conecta ciência de ponta à aplicação prática.",
+    image: "/AlexandreMeneghelloFuentefria.jpeg",
+    email: "alexandre.fuentefria@ufrgs.br",
+    lattes: "http://lattes.cnpq.br/3011308324416888",
     solutionsCount: 18,
     successRate: 92,
   },
   {
     id: "3",
-    name: "Dra. Mariana Costa",
-    title: "Especialista em Nanotecnologia",
-    institution: "UFRJ",
-    location: "Rio de Janeiro, Brasil",
-    expertise: ["Nanotecnologia", "Materiais Avançados", "Biomedicina"],
-    achievements: "10+ anos de experiência, 30+ patentes",
-    image: "/professional-woman-researcher.png",
-    email: "mariana.costa@ufrj.br",
-    linkedin: "marianacosta",
+    name: "Julyana Sthéfanie Simões Matos",
+    title: "Médica Veterinária - Especialista em Segurança Alimentar",
+    institution: "Vigilância Sanitária de Novo Hamburgo",
+    location: "Novo Hamburgo, Brasil",
+    expertise: ["Medicina Veterinária", "Segurança Alimentar", "Microbiologia", "Gestão em Saúde"],
+    achievements: "15 anos de experiência, Mestrado em Microbiologia, Doutorado em andamento",
+    bio: "Médica Veterinária com sólida experiência em segurança alimentar, fiscalização sanitária e gestão de qualidade, com mestrado em Microbiologia Agrícola e do Ambiente e doutorado em Qualidade Ambiental em andamento. Especialista em Gestão da Segurança de Alimentos e em Gestão em Saúde, atua na Vigilância Sanitária de Novo Hamburgo/RS e em laboratórios de Imunogenética e Microbiologia de Alimentos. Reconhecida por liderar projetos estratégicos de saúde pública, incluindo planos de contingência e imunização contra COVID-19, e por transformar conhecimento técnico em soluções práticas para o setor de alimentos e serviços de saúde.",
+    image: "/JulyanaSthefanieSimoesMatos.jpeg",
+    email: "julyana.matos@novohamburgo.rs.gov.br",
+    lattes: "http://lattes.cnpq.br/5368421715483357",
     solutionsCount: 9,
     successRate: 88,
   },
@@ -75,6 +80,7 @@ const mockResearchers: Researcher[] = [
     location: "São Paulo, Brasil",
     expertise: ["IA", "Machine Learning", "Visão Computacional"],
     achievements: "8+ anos de experiência, Fundador de 2 startups",
+    bio: "Pesquisador especializado em inteligência artificial e machine learning.",
     image: "/professional-man-ai-researcher.jpg",
     email: "roberto.oliveira@usp.br",
     linkedin: "robertooliveira",
@@ -89,6 +95,7 @@ const mockResearchers: Researcher[] = [
     location: "Florianópolis, Brasil",
     expertise: ["Energia Solar", "Sustentabilidade", "Eficiência Energética"],
     achievements: "12+ anos de experiência, Coordenadora de projetos internacionais",
+    bio: "Pesquisadora especializada em energia renovável e sustentabilidade.",
     image: "/professional-woman-energy-researcher.jpg",
     email: "juliana.santos@ufsc.br",
     linkedin: "julianasantos",
@@ -103,6 +110,7 @@ const mockResearchers: Researcher[] = [
     location: "Piracicaba, Brasil",
     expertise: ["Agronomia", "IoT", "Sensoriamento Remoto"],
     achievements: "18+ anos de experiência, Consultor para FAO",
+    bio: "Especialista em agricultura de precisão e tecnologias agrícolas.",
     image: "/professional-man-agriculture-researcher.jpg",
     email: "fernando.lima@usp.br",
     linkedin: "fernandolima",
@@ -286,12 +294,12 @@ export function ResearchersPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredResearchers.map((researcher) => (
             <Card key={researcher.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative h-48 bg-gradient-to-br from-primary/10 to-secondary/10">
+              <div className="relative h-48 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
                 <Image
                   src={researcher.image || "/placeholder.svg"}
                   alt={researcher.name}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
@@ -339,6 +347,13 @@ export function ResearchersPage() {
                       Contato
                     </a>
                   </Button>
+                  {researcher.lattes && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={researcher.lattes} target="_blank" rel="noopener noreferrer" title="Currículo Lattes">
+                        <BookOpen className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
                   {researcher.linkedin && (
                     <Button variant="outline" size="sm" asChild>
                       <a
